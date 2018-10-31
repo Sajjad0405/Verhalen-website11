@@ -148,7 +148,7 @@ main {
     color: white;
     margin-bottom: -0.5em;
     padding: 0.5em;
-    margin-top: -0.5em;
+    margin-top: -0.7em;
 }
 
 /*Favoriet-pagina :Einde*/
@@ -311,13 +311,14 @@ p {
     margin-left: auto;
     margin-right: auto;
     margin-top: -0.5em;
-    width: 7.3em;
-    height: 3em;
     font-size: 1.1em;
     color: white;
     align-items: center;
     padding-left: 1em;
     padding-right: 1em;
+    width: 9.3em;
+    height: 3em;
+    
 }
 
 /*Favoriet-epmty :Einde*/
@@ -844,7 +845,7 @@ footer h3 {
         margin-left: auto;
         margin-right: auto;
         margin-top: -0.5em;
-        width: 7.3em;
+        width: 9.3em;
         height: 3em;
         font-size: 1.1em;
         color: white;
@@ -978,7 +979,7 @@ footer h3 {
         margin-left: auto;
         margin-right: auto;
         margin-top: -0.5em;
-        width: 7.3em;
+        width: 9.3em;
         height: 3em;
         font-size: 1.1em;
         color: white;
