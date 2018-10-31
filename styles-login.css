@@ -1,0 +1,25 @@
+@media(max-width: 30em) {
+
+    body {
+        background: url(images/background-mobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+}
+
+
+@media(min-width: 30em) {
+    body {
+        background: url(images/tablet.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+}
+
+
+@media(min-width: 64em) {
+    body {
+        background: url(images/login-background.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+}
