@@ -12,7 +12,7 @@ for (var i = 0; i < heart.length; i++) {
 function checkFavorite() {
 
     var redheart = document.querySelectorAll('article > button');
-    
+
     var favoriteCount = 0;
 
     var span = document.querySelector('span.fav-circle');
@@ -24,34 +24,35 @@ function checkFavorite() {
     }
 
     span.innerHTML = favoriteCount;
-    
+
     var checkPath;
-    
+
     checkPath = document.querySelector('nav ul li > a')
 
     if (favoriteCount > 0) {
 
         span.classList.add('show');
         span.classList.remove('hidden');
-        
+
         checkPath.href = "favoriet.html";
         console.log(checkPath);
     } else {
 
         span.classList.add('hidden');
         span.classList.remove('show');
-        
+
         checkPath.href = "favoriet-empty.html";
         console.log(checkPath);
     }
 }
 
-
 // Download icoon
 var downloadIcon = document.querySelectorAll('footer > button');
+
+//popup die weergegven wordt wanneer je downloadt
 var popUp = document.querySelector('.popup');
 
-//Weergeef van een popup dat de verhaal gedownload is
+//Weergeef een popup dat de verhaal gedownload is
 function toggleDownload() {
     popUp.classList.toggle('popup-clicked');
 }
