@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: 'Nexa Light';
+    font-family: 'Nexa';
     background-color: #fff;
     font-size: 1em;
     margin: 0;
@@ -21,12 +21,13 @@ main {
     background-color: transparent;
     font-size: calc(3.5vw + 4.8em);
     flex-direction: column;
-    margin: auto;
     width: 2.8em;
     align-items: center;
     padding-top: 0em;
-    padding-bottom: 0;
+    padding-bottom: -0em;
     padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .verhaal-main,
@@ -36,12 +37,45 @@ main {
 
 .verhaal-main header {
     background-image: none;
-    padding: 0;
+    padding: 0em;
+    margin-bottom: -4em;
+}
+
+.verhaal-main header h1 {
+    padding-top: 1.2em;
 }
 
 .verhaal-main header h1::first-letter {
     color: #ed771a;
-    margin-right: 0.5em;
+}
+
+.verhaal-header {
+    margin-top: -1em;
+}
+
+.first-link {
+    width: 1em;
+    height: 1em;
+    margin-left: 13.5em;
+    margin-top: -0.99em;
+    position: absolute;
+/*    z-index: 100;*/
+}
+
+.first-link:hover {
+    width: 2em;
+    height: 2em;
+    transition: 1s ease;
+    transform: scale(1);
+}
+
+.second-link {
+    width: 1em;
+    height: 1em;
+    margin-left: 19.5em;
+    margin-top: 11em;
+    position: absolute;
+/*    z-index: 100;*/
 }
 
 .alinea-1,
@@ -58,6 +92,7 @@ main {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 .alinea-4 {
@@ -92,39 +127,46 @@ main {
     font-size: 2em;
 }
 
-.alinea-1 a,
-.alinea-2 a,
-.alinea-3 a {
+.arrow {
+    z-index: 100;
+    position: relative;
+}
+
+.arrow img {
+    width: 2em;
+    margin-left: 10em;
+    margin-top: -10em;
+}
+
+.rope {
+    display: none;
+}
+
+.rope img {
+    width: 2.3em;
+    margin-left: 2em;
+    z-index: 100;
+    margin-top: -5em;
+}
+
+.rope-active {
     display: flex;
-    width: 0;
-    white-space: nowrap;
-    position: absolute;
-    text-align: right;
-    transform-origin: bottom;
-    transform: rotate(90deg);
-    z-index: 1;
-    margin-left: 19.5em;
-    margin-top: 4em;
-    text-decoration: none;
-    color: white;
-    opacity: 0.4
 }
 
-.alinea-2 a {
-    margin-left: 16em;
-    transform: rotate(0deg);
-    margin-top: 9.1em;
-    background-color: #ed771a;
-    opacity: 0.3;
+.lever {
+    display: none;
 }
 
-.alinea-3 a {
-    transform: rotate(0deg);
-    margin-left: 15em;
-    margin-top: 20em;
-    font-size: 0.5em;
-    opacity: 0.3;
+.lever img {
 
+    width: 9em;
+    margin-left: 13em;
+    margin-top: -5em;
+    z-index: 100;
+}
+
+.lever-active {
+    display: flex;
 }
 
 /*Eind verhaal*/
@@ -134,13 +176,14 @@ main {
 .fav-header {
     background: none;
     background-color: #2800a0;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
 }
 
 .fav-header h1 {
     color: white;
     margin-bottom: -0.5em;
-    padding: 0.5em;
-    margin-top: -0.7em;
+    padding: .5em;
 }
 
 /*Favoriet-pagina :Einde*/
@@ -160,31 +203,48 @@ header h1 {
     font-size: calc(3.5vw + 1.8em);
     color: white;
     margin-right: auto;
-    margin-left: 0;
-    margin-top: 0;
 }
 
 /*form : Begin*/
 
 form {
-    display: flex;
-    align-items: center;
-    width: 80%;
     margin: 8em auto 0em auto;
     border-radius: 0.5em;
-    flex-direction: column;
 }
 
-form p a {
+.login-main form > a {
+    margin-left: 1em;
+    font-size: 0.9em;
     color: #2800a0;
+
+}
+
+.geen-account {
+    margin-bottom: 1em;
+    margin-left: 1.1em;
+    padding-bottom: 0.5em;
+}
+
+.login-main form p a {
+    color: #2800a0;
+}
+
+.login-main form a:hover {
+    color: #ff3268;
+}
+
+.login-main {
+    padding-top: 2em;
 }
 
 .login-main form {
     background-color: white;
+    width: 95%;
 }
 
 .login-main form fieldset {
-    background-color: white;
+    background-color: transparent;
+    z-index: 100;
 }
 
 fieldset {
@@ -197,65 +257,78 @@ fieldset {
 }
 
 legend {
+    font-family: "Nexa";
     font-weight: bold;
-    left: 0;
-    right: 0;
-    padding: 1.1em 0.5em;
     color: #1f1799;
     font-size: 1.7em;
-    background: white;
     border-radius: 0.5em 0.5em 0 0;
-    margin-bottom: 1em;
+    margin-bottom: 0.6em;
+    padding-top: 1em;
+    padding-bottom: 0em;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 label {
     font-size: 1.2em;
+    font-weight: bold;
 }
 
-input[type="text"] {
+input[type="text"],
+[type="email"],
+[type="password"] {
     height: 3em;
-    width: 9em;
-    font-size: 1.em;
+    font-size: 1em;
     border-radius: 0.5em;
-    border: #8397ae solid 1px;
+    border: .0625rem solid #91a3b7;
     padding: 0 0 0 1em;
     color: #606060;
     margin: 0.5em 0;
-    width: 90%;
+    width: 100%;
 }
 
 input[type="submit"] {
     margin-top: .7rem;
-    width: auto;
     height: 2.5rem;
     font-size: 1rem;
     border-radius: 1.5rem;
-    padding: 0 1rem;
+    padding: 0rem 1rem;
     background: #FF3268;
     color: #fff;
     border: none;
     cursor: pointer;
     box-shadow: inset 0 -0.1875em 0.0625em #ca2b55;
     margin-bottom: 1rem;
+    display: block;
+    margin-left: 1em;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+    transition: 1s ease;
+    border: 1px solid #2800a0;
 }
 
 input::placeholder {
     color: #616160;
+    font-size: 1rem;
 }
 
 input:hover::placeholder {
     color: #909090;
 }
 
-input:focus {
-    transform: scale(1.01, 1.01);
-}
-
-input[type="text"]:valid {
+input[type="email"]:valid,
+input[type="password"]:valid {
     border: 1px solid green;
 }
 
-form:valid {}
+input[type="submit"]:hover {
+    background-color: #ff658e;
+    box-shadow: inset 0 -0.1875em 0.0625em #ca2b55
+}
 
 /*Zoekbalk :Start*/
 
@@ -264,13 +337,18 @@ form:valid {}
     margin-top: 0em;
     background-color: #2800a0;
     border-radius: 0em;
+    display: flex;
 }
 
 .zoek-form input[type="text"] {
     border-radius: 0.5em;
-    width: 18em;
+    /width: 18em;
     margin-left: auto;
     margin-right: auto;
+}
+
+.zoek-form fieldset div {
+    display: flex;
 }
 
 /*Zoekbalk :Einde*/
@@ -284,6 +362,22 @@ p {
     line-height: 1.5em;
 }
 
+.login-main p {
+    font-size: 1em;
+}
+
+h3 {
+    color: #2800a0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+    height: .0625rem;
+    border: 0;
+    background-color: #e6e6e6;
+    margin: 0;
+}
 
 /*Favoriet-empty :Start*/
 
@@ -318,7 +412,8 @@ p {
 
 .div-terug {
     margin-bottom: 1em;
-    padding-bottom: 0;
+    position: absolute;
+    margin-top: 3em;
 }
 
 div .terug {
@@ -326,8 +421,7 @@ div .terug {
     background-color: #00d66c;
     border-radius: 1em;
     display: flex;
-    margin-left: 1.8em;
-    margin-top: 0.5em;
+    margin-left: 2em;
     width: 9em;
     height: 2em;
     font-size: 1.1em;
@@ -335,7 +429,7 @@ div .terug {
     align-items: center;
     padding-left: 1em;
     padding-right: 1em;
-
+    margin-top: -1.3em;
 }
 
 /*Terug knop bij verhaal  ;Einde*/
@@ -354,6 +448,8 @@ section div {
     border-radius: 0.5em 0.5em 0em 0em;
     margin-left: 1em;
     margin-right: 1em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
 }
 
 section div:nth-child(1) {
@@ -363,40 +459,67 @@ section div:nth-child(1) {
 }
 
 section div:nth-child(1) h2 {
-    color: #ff3268;
+    color: white;
     font-size: 2em;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
 
 section:nth-child(2) div:nth-child(1) h2 {
-    color: #2800a0;
+    color: white;
 }
 
 section:nth-child(3) div:nth-child(1) h2 {
 
-    color: #00d66c;
+    color: white;
 }
 
-.pink-background {
+section:nth-child(4) div:nth-child(1) h2 {
+
+    color: white;
+}
+
+
+section:nth-of-type(1) > div:nth-of-type(1) {
     background-color: #ff3268;
-    border-radius: 0em;
+    margin-bottom: 0;
 }
 
-.blue-background {
+section:nth-of-type(2) > div:nth-of-type(1) {
     background-color: #2800a0;
+    margin-bottom: 0;
+}
+
+section:nth-of-type(3) > div:nth-of-type(1) {
+    background-color: #00d66c;
+    margin-bottom: 0;
+}
+
+.populair,
+.aanbevolen,
+.beoordeling {
+    background-color: white;
     border-radius: 0em;
 }
 
-.green-background {
-    background-color: #00d66c;
+.Aanbevolen {
+    background-color: white;
+    border-radius: 0em;
+}
+
+.Beoordeling {
+    background-color: white;
     border-radius: 0em;
 }
 
 div article {
     flex-shrink: 0;
-    width: 13em;
+    width: 15em;
     margin: 1em;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.33);
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.33);
+    padding: 1em;
 }
 
 article > h2 {
@@ -415,7 +538,7 @@ section > h2 {
 article {
     background-color: white;
     border-radius: 5px;
-    padding: 0 0.5em 0 0.5em;
+    padding: 0.5em 0 0.5em;
     margin-bottom: 0.9em;
     margin-right: 1em;
     color: #00d66c;
@@ -432,7 +555,7 @@ article button {
     border: none;
     width: 2em;
     height: 2em;
-    margin-left: 13em;
+    margin-left: 14em;
     margin-top: -3.5em;
     position: absolute;
     transition: 0.5s ease;
@@ -445,7 +568,7 @@ article button:hover {
 }
 
 article button.redheart {
-    background-image: url(images/red%20heart.png);
+    background-image: url(images/pink%20heart.png);
 }
 
 
@@ -456,6 +579,8 @@ article > p {
 article img {
     width: 13em;
     height: 13em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img {
@@ -470,10 +595,21 @@ img {
 
 /*Navigatie van de hele website : Begin*/
 
+.verhaal-body nav {
+    padding-top: 1em;
+    margin-top: -3em;
+    margin-bottom: 1em;
+}
+
 nav {
     background-color: #00d66c;
     display: flex;
-    padding-top: 0.3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
 
 nav ul {
@@ -484,9 +620,11 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 0.5em;
     position: relative;
     margin-bottom: -1em;
+    margin-right: 0.5em;
+    padding-left: 0.5em;
+    padding-top: 0.3em;
 }
 
 nav img {
@@ -525,20 +663,21 @@ ul a {
 
 .fav-circle {
     color: white;
-    background-color: red;
+    background-color: #ff3268;
     width: 1.4em;
     height: 1.4em;
     padding: 0em;
     border-radius: 50%;
     position: absolute;
-    top: 0;
-    left: 1.5em;
     text-align: center;
     display: none;
+    top: -0.4em;
+    left: 1.8em;
 }
 
 .show {
     display: block;
+
 }
 
 .hidden {
@@ -636,7 +775,7 @@ footer button {
     height: 1.5em;
     position: absolute;
     transition: 0.5s ease;
-    margin-left: 13em;
+    margin-left: 14em;
     margin-top: 0.8em;
 }
 
@@ -649,16 +788,22 @@ footer ul a {
     display: flex;
 }
 
+footer ul a:hover {
+    color: #ff3268;
+    display: flex;
+}
+
 footer h3 {
     color: #202020;
     margin-top: 1em;
     margin-bottom: -0.5em;
+    width: 10em;
 }
 
 .footer-last {
     display: flex;
     width: 10em;
-    margin-bottom: 0.3em;
+    margin-bottom: 1em;
     flex-direction: column;
     padding-left: 3em;
 }
@@ -689,8 +834,7 @@ footer h3 {
     }
 
     .verhaal-main header {
-        margin-bottom: -10em;
-        margin-top: -10em;
+        margin-bottom: -5em;
     }
 
     .verhaal-main h1 {
@@ -739,6 +883,10 @@ footer h3 {
         padding: 0em 0em 0em 1em;
     }
 
+    .verhaal-body nav {
+        padding-top: 0em;
+    }
+
     main section {
         width: 60em;
         margin: auto;
@@ -746,6 +894,11 @@ footer h3 {
     /*Form :Start*/
     form {
         max-width: 40%;
+    }
+
+    .login-main form {
+        width: 40%;
+        height: 30em;
     }
 
     .zoek-form {
@@ -774,7 +927,6 @@ footer h3 {
     .alinea-2,
     .alinea-3,
     .alinea-4 {
-
         font-size: 1.3em;
         width: 25em;
     }
@@ -787,38 +939,22 @@ footer h3 {
         margin-left: 10em;
     }
 
-    .alinea-1 a,
-    .alinea-2 a,
-    .alinea-3 a {
-        display: flex;
-        width: 0;
-        white-space: nowrap;
-        position: absolute;
-        text-align: right;
-        transform-origin: bottom;
-        transform: rotate(90deg);
-        z-index: 1;
-        margin-left: 24.3em;
-        margin-top: 2.8em;
-        text-decoration: none;
-        color: white;
-        opacity: 0.4
+    .arrow img {
+        width: 3em;
+        margin-left: 27em !important;
+        margin-top: -10em;
     }
 
-    .alinea-2 a {
-        margin-left: 21.2em;
-        transform: rotate(0deg);
-        margin-top: 7em;
-        background-color: #ed771a;
-        opacity: 0.3;
+    .rope img {
+        width: 3.3em;
+        margin-left: 16em !important;
+        margin-top: -5em;
     }
 
-    .alinea-3 a {
-        transform: rotate(0deg);
-        margin-left: 25em;
-        margin-top: 15.2em;
-        font-size: 0.5em;
-        opacity: 0.3;
+    .lever img {
+        width: 12em;
+        margin-left: 40em !important;
+        margin-top: -4em;
     }
 
     .div-terug {
@@ -840,13 +976,18 @@ footer h3 {
         text-align: center;
         padding-left: 1em;
         padding-right: 1em;
-
+        margin-top: 1em;
     }
 
     /*Verhaal detail: Einde*/
     /*Favoriet-empty :Start*/
     .fav-header {
-        height: 8em;
+        height: 13em;
+        padding: 0.1em;
+    }
+
+    .fav-header h1 {
+        padding-top: 0.3em;
     }
 
     .fav-empty h3 {
@@ -874,6 +1015,9 @@ footer h3 {
     }
 
     /*Favoriet-epmty :Einde*/
+    .login-main span {
+        background-image: url(images/transavia%20logo.svg);
+    }
 }
 
 /*Tablet weergave*/
@@ -882,12 +1026,49 @@ footer h3 {
 
     body {
         font-size: 1em;
-        font-family: "Nexa Light";
+        font-family: "Nexa";
+    }
+
+    .verhaal-body nav {
+        padding-top: 0.5em;
+        margin-top: 0em;
+    }
+
+    .verhaal-main header {
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+
+    .div-terug {
+        margin-bottom: 1em;
+        position: absolute;
+        margin-top: 6.4em;
+    }
+
+    div .terug {
+        text-decoration: none;
+        background-color: #00d66c;
+        border-radius: 1em;
+        display: flex;
+        margin-left: 2em;
+        width: 9em;
+        height: 2em;
+        font-size: 1.1em;
+        color: white;
+        align-items: center;
+        padding-left: 1em;
+        padding-right: 1em;
+        margin-top: -1.3em;
     }
     /*form*/
     form {
         width: 60%;
         align-items: center;
+    }
+
+    .login-main form {
+        background-color: white;
+        width: 70%;
     }
 
     .zoek-form {
@@ -909,46 +1090,30 @@ footer h3 {
     .alinea-2,
     .alinea-3,
     .alinea-4 {
-
         font-size: 1.3em;
         margin-left: auto;
         margin-right: auto;
         width: 30em;
     }
 
-    .alinea-1 a,
-    .alinea-2 a,
-    .alinea-3 a {
-        display: flex;
-        width: 0;
-        white-space: nowrap;
-        position: absolute;
-        text-align: right;
-        transform-origin: bottom;
-        transform: rotate(90deg);
-        z-index: 1;
-        margin-left: 29.3em;
-        margin-top: 1.7em;
-        text-decoration: none;
-        color: white;
-        opacity: 0.6;
+    .arrow img {
+        width: 3em;
+        margin-left: 23em;
+        margin-top: -10em;
     }
 
-    .alinea-2 a {
-        margin-left: 26.2em;
-        transform: rotate(0deg);
-        margin-top: 7em;
-        background-color: #ed771a;
-        opacity: 0.3;
+    .rope img {
+        width: 3.3em;
+        margin-left: 12em;
+        margin-top: -5em;
     }
 
-    .alinea-3 a {
-        transform: rotate(0deg);
-        margin-left: 29em;
-        margin-top: 15.2em;
-        font-size: 0.5em;
-        opacity: 0.2;
+    .lever img {
+        width: 12em;
+        margin-left: 35em;
+        margin-top: -7em;
     }
+
     /*Verhaal detail : Einde*/
     .verhaal-main h1 {
         color: #75c7d5;
@@ -1007,6 +1172,11 @@ footer h3 {
         padding-left: 1em;
         padding-right: 1em;
     }
+
+    .fav-header {
+        padding-bottom: 1em;
+    }
+
 
     /*Favoriet-epmty :Einde*/
     /*Footer-favorieten-empty :Start*/
